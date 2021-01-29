@@ -10,7 +10,7 @@ class MyTeam():
         '''
         self._info = team_info.replace('\n', '').split(SEPARATOR)
         self.name = self._info[POS.index('name')]
-        self.damage = int(self._info[POS.index('damage')])
+        self.damage = self._info[POS.index('damage')]
         self.get_wifes()
         self.assistors = []
         self.safe_team = 0  # 表示这个阵容是安全的随便打，即conflicts为空
@@ -22,4 +22,6 @@ class MyTeam():
             self.wifes.append(self._info[POS.index(i)])
 
 if __name__ == "__main__":
+    a = []
+    print(len(a))
     pass

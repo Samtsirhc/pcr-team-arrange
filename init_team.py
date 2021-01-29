@@ -10,22 +10,6 @@ def get_teams(file_name:str):
             teams.append(MyTeam(line))
     return teams
 
-# 检查一下输入的阵容合不合法
-# def check_teams(teams):
-#     team_names = []
-#     team_damages = []
-#     try:
-#         for i in range(len(teams)):
-#             team_names.append(teams[i][0])
-#             teams[i][1] = int(teams[i][1])
-#             if len(teams[i]) != 7:
-#                 print(len(teams[i]))
-#                 raise Exception('阵容人数错误，注意不要多打空格')
-#         if len(team_names) != len(set(team_names)):
-#             raise Exception('阵容名称重复')
-#     except Exception as e:
-#         print(e)
-
 # 找出绝对安全的阵容
 def get_safe_team(teams:list):
     use_times = {}
@@ -60,11 +44,11 @@ def get_conflict_team(teams:list):
             if teams[j].safe_team == 1:
                 continue
             if check_conflict(teams[i].wifes, teams[j].wifes):
-                teams[i].conflicts.append(j)
-                teams[j].conflicts.append(i)
+                teams[i].conflicts.append(teams[j].name)
+                teams[j].conflicts.append(teams[i].name)
 
 def check_conflict(team_1:list, team_2:list):
-    _tmp = team_1
+    _tmp = [i for i in team_1]
     _tmp.extend(team_2)
     if len(set(_tmp)) < 8:
         return True
@@ -80,6 +64,7 @@ def init_team():
 if __name__ == "__main__":
     teams = init_team()
     for i in teams:
+        print(i.wifes)
         print(i.conflicts)
     #     if i.safe_team == 1:
     #         print(i.name);print(i.wifes);print(i.assistors)

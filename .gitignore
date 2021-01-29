@@ -1,2 +1,11 @@
 ﻿# Byte-compiled / optimized / DLL files
 __pycache__/
+build/
+dist/
+
+
+
+# extensions
+*.spec
+*.txt
+*.exe

@@ -1,3 +1,9 @@
+# 输出结果文件名称
+OUTPUT_FILE = '结果.txt'
+
+# 你需要的阵容数，得出的结果要求大于等于这个数
+LEAST_TEAM_COUNT = 3
+
 # 阵容文件名称
 FILE_NAME = '阵容.txt'
 
