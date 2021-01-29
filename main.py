@@ -97,9 +97,12 @@ class TeamGroup():
 
     def get_unconflict_group_name(self):
         self.unconflict_group_name = copy.deepcopy(self.mutual_unconflict_group_name)
-        for i in range(len(self.unconflict_group_name)):
-            if self.check_conflict(self.unconflict_group_name[i]):
-                self.unconflict_group_name.pop(i)
+        _tmp = []
+        for i in self.unconflict_group_name:
+            if self.check_conflict(i):
+                pass
+            else:
+                _tmp.append(i)
 
     def get_output(self, teams):
         _output = []
